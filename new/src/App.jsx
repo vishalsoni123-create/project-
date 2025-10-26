@@ -10,6 +10,7 @@ import { Footer } from './components/Footer'
 import {Login} from './components/Login'
 import {Project} from './components/Project'
 import { Mentorship } from "./components/Mentorship";
+import { Why } from "./components/Why";
 function App() {
   return (
    <Router>
@@ -22,15 +23,16 @@ function App() {
               <Home />
               <About />
               <Service />
+                  <Why />
               <Contact />
-              <Footer />
             </>
           }
         />
         <Route path="/login" element={<Login />} />
         <Route path="/project" element={<Project/>} />
+        <Route path="/mentorship" element={  <Mentorship />} />
       </Routes>
-        <Mentorship />
+        <Footer />
     </Router>
   )
 }

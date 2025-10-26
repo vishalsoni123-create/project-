@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import "./navbar.css";
 export function Mentorship() {
   return (
@@ -8,6 +9,7 @@ export function Mentorship() {
         <p>
           Get guided by professionals from the tech industry! Our mentorship program helps you grow in software development, project building, and career readiness.
         </p>
+        <Link to="/">Home</Link>
       </section>
 
       <section className="card-container-mentorship">
