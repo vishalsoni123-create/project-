@@ -11,10 +11,13 @@ import {Login} from './components/Login'
 import {Project} from './components/Project'
 import { Mentorship } from "./components/Mentorship";
 import { Why } from "./components/Why";
+import { Itsolution } from "./components/Itsolution";
+import { Signup } from "./components/Signup";
+import { Registration } from "./Admin/Registration";
 function App() {
   return (
    <Router>
-      <Navbar />
+       <Navbar />
       <Routes>
         <Route
           path="/"
@@ -23,16 +26,18 @@ function App() {
               <Home />
               <About />
               <Service />
-                  <Why />
+              <Why />
               <Contact />
             </>
           }
         />
         <Route path="/login" element={<Login />} />
         <Route path="/project" element={<Project/>} />
-        <Route path="/mentorship" element={  <Mentorship />} />
+        <Route path="/mentorship" element={<Mentorship />} />
+        <Route path="/itsolution" element={<Itsolution />} />
+        <Route path="/signup" element={<Signup/>} />
       </Routes>
-        <Footer />
+      <Footer />
     </Router>
   )
 }

@@ -47,7 +47,7 @@ export function Service() {
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum laborum sapiente tempore  </p>
             </div>
             <div className="service-btn" >
-              <button className="actual-btn">click me</button>
+               <Link className="actual-btn" to="/itsolution">Click me</Link>
             </div>
           </div>
         </div>

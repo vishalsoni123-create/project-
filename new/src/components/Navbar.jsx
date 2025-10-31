@@ -21,7 +21,7 @@ export function Navbar()
          </div>
         <div className="nav-btn-con">
          <Link to="/login" className="nav-btn">Login</Link>
-         <a href="" className="nav-btn">SignUp</a>
+         <Link to="/signup" className="nav-btn">SignUp</Link>
         </div>
          <div onClick={()=>handle()} className="responsive-btn">
            <div className="line"></div>

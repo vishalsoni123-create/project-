@@ -822,6 +822,7 @@ box-shadow:
     padding: 20px;
   }
 }
+/*--------------------------------------------------------WHY-CHOOSE-US----------------------------------*/
 .why-upper-con{
   background: linear-gradient(135deg, #0a1a2f, #05101f);
 }
@@ -928,3 +929,215 @@ box-shadow:
     margin-top: 40px;
   }
 }
+
+
+.internship-section {
+  background: linear-gradient(135deg, #06142e, #1b3358);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.internship-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #00e0ff;
+}
+
+.internship-subtitle {
+  font-size: 20px;
+  color: #00b8d9;
+  margin-bottom: 40px;
+}
+
+.internship-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.internship-card {
+  background: #fff;
+  color: #000;
+  width: 260px;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.internship-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.internship-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.internship-card h3 {
+  color: #002366;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.internship-card p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.internship-card button {
+  background-color: #002366;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.internship-card button:hover {
+  background-color: #00b8d9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .internship-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.signup-page {
+  background: linear-gradient(135deg, #031b38, #082c57);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  position: relative;
+}
+
+.signup-box {
+  background: #fff;
+  color: #000;
+  width: 380px;
+  padding: 40px 35px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.signup-box h2 {
+  color: #012b63;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.signup-box p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to right, #001a42, #043e7d);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.signup-btn:hover {
+  background: linear-gradient(to right, #043e7d, #001a42);
+}
+
+.login-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.login-text a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+.brand {
+  position: absolute;
+  top: 30px;
+  left: 60px;
+  font-size: 26px;
+  color: #00b8ff;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .signup-page {
+    padding: 20px;
+  }
+
+  .signup-box {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
