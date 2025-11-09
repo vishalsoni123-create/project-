@@ -1,23 +1,30 @@
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.css'
-import { About } from './components/About'
-import { Home } from './components/Home'
-import { Navbar } from './components/Navbar'
-import { Service } from './components/Service'
-import { Contact } from './components/Contact'
-import { Footer } from './components/Footer'
-import {Login} from './components/Login'
-import {Project} from './components/Project'
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import './App.css';
+import { About } from './components/About';
+import { Home } from './components/Home';
+import { Navbar } from './components/Navbar';
+import { Service } from './components/Service';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
+import { Login } from './components/Login';
+import { Project } from './components/Project';
 import { Mentorship } from "./components/Mentorship";
 import { Why } from "./components/Why";
 import { Itsolution } from "./components/Itsolution";
 import { Signup } from "./components/Signup";
-import { Registration } from "./Admin/Registration";
-function App() {
+import { Registrationpanel } from "./Admin/Registrationpanel";
+
+function AppWrapper() {
+  const location = useLocation();
+  const hideLayoutPaths = ["/login", "/signup", "/admin"];
+  const shouldHideLayout = hideLayoutPaths.some((path) =>
+    location.pathname.startsWith(path)
+  );
+
   return (
-   <Router>
-       <Navbar />
+    <>
+      {!shouldHideLayout && <Navbar />}
+
       <Routes>
         <Route
           path="/"
@@ -32,14 +39,26 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/project" element={<Project/>} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/project" element={<Project />} />
         <Route path="/mentorship" element={<Mentorship />} />
         <Route path="/itsolution" element={<Itsolution />} />
-        <Route path="/signup" element={<Signup/>} />
+        <Route path="/admin/*" element={<Registrationpanel />} />
       </Routes>
-      <Footer />
-    </Router>
-  )
+
+      {!shouldHideLayout && <Footer />}
+    </>
+  );
 }
 
-export default App
+// ✅ Main App component
+function App() {
+  return (
+    <Router>
+      <AppWrapper />
+    </Router>
+  );
+}
+
+export default App;
+

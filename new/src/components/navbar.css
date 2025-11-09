@@ -228,6 +228,9 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.service-div .service-card p{
+  color: black;
+}
 .service-div .service-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -725,6 +728,7 @@ box-shadow:
   }
   .responsive .ul-con li a {
     color: white;
+    font-size: 15px;
   }
   .ul-main-con {
     display: none;
@@ -741,6 +745,9 @@ box-shadow:
     margin-left: 10px;
   }
   /*------------------------------------------------------------HOME RESPONSIVE-------------------------------------------------*/
+  #home{
+    padding-top:0px;
+  }
   .main {
     display: flex;
     flex-direction: column;
@@ -756,22 +763,25 @@ box-shadow:
   }
   .main .left p {
     text-align: justify;
+    font-size:16px;
   }
   /*------------------------------------------------------------ABOUT RESPONSIVE-------------------------------------------------*/
-    .sec-main {
+  .sec-main {
     flex-direction: column;
-    padding: 0px;
+    padding:0px;
   }
   .about-main {
     padding: 20px;
   }
   .about-main p {
     text-align: justify;
-    font-size: 19px;
+    font-size: 16px;
     color: #ccc;
   }
   .about-card {
     width: 100%;
+    margin:0px;
+    margin-top:15px;
   }
   .sec-third {
     flex-direction: column;
@@ -782,6 +792,7 @@ box-shadow:
   /*------------------------------------------------------------SERVICE RESPONSIVE-------------------------------------------------*/
   .service {
     display: block;
+    padding:20px;
   }
   .service-div .service-card {
     width: 100%;
@@ -1016,128 +1027,88 @@ box-shadow:
   }
 }
 
-.signup-page {
-  background: linear-gradient(135deg, #031b38, #082c57);
+.registration-container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  color: #fff;
-  position: relative;
+  padding: 40px 0;
 }
 
-.signup-box {
-  background: #fff;
-  color: #000;
-  width: 380px;
-  padding: 40px 35px;
+.registration-form {
+  background: white;
+  padding: 35px 45px;
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 800px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+.registration-form h2 {
   text-align: center;
-}
-
-.signup-box h2 {
-  color: #012b63;
-  font-size: 26px;
-  margin-bottom: 10px;
-}
-
-.signup-box p {
-  color: #666;
-  font-size: 14px;
+  color: #333;
   margin-bottom: 25px;
 }
 
-.input-group {
-  text-align: left;
-  margin-bottom: 18px;
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
-.input-group label {
-  display: block;
-  font-size: 14px;
-  color: #333;
-  margin-bottom: 5px;
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
   font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
 }
 
-.input-group input {
-  width: 100%;
+input,
+select {
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 6px;
+  border: 1px solid #ccc;
   outline: none;
   font-size: 14px;
-  transition: border 0.3s ease;
 }
 
-.input-group input:focus {
-  border-color: #007bff;
+input:focus,
+select:focus {
+  border-color: #667eea;
 }
 
-.signup-btn {
+.gender-options {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.signup{
   width: 100%;
-  padding: 10px;
-  background: linear-gradient(to right, #001a42, #043e7d);
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   border: none;
-  border-radius: 6px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 15px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
   margin-top: 10px;
+  transition: 0.3s;
 }
 
-.signup-btn:hover {
-  background: linear-gradient(to right, #043e7d, #001a42);
-}
-
-.login-text {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #333;
-}
-
-.login-text a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.login-text a:hover {
-  text-decoration: underline;
-}
-
-.brand {
-  position: absolute;
-  top: 30px;
-  left: 60px;
-  font-size: 26px;
-  color: #00b8ff;
-  font-weight: 700;
+button:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
 }
 
 @media (max-width: 768px) {
-  .signup-page {
-    padding: 20px;
-  }
-
-  .signup-box {
-    width: 100%;
-    max-width: 360px;
+  .form-row {
+    flex-direction: column;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
