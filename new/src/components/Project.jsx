@@ -4,9 +4,22 @@ import img3 from '../image/react2.jpg'
 import img4 from '../image/vbproject.png'
 import img5 from '../image/pythonproject.png'
 import img6 from '../image/phpproject.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './navbar.css'
 export function Project() {
+  const navigate = useNavigate();
+  const handleBuyNow = () => {
+    const student = localStorage.getItem("student");
+
+    if (!student) {
+      // User not logged in → go to login page
+      alert("Please login before buying a project!");
+      navigate("/payment"); // assuming "/" is your Login page
+    } else {
+      // User is logged in → open payment or project details
+      navigate("/login"); // or wherever you want to go
+    }
+  };
   return (
     <div className="project-main">
       <div className="project-con">
@@ -21,7 +34,7 @@ export function Project() {
             <h3>HTML Project</h3>
             <p>Responsive static HTML & CSS project with professional design.</p>
             <div className="price"> ₹500</div>
-            <a href="#" className="project-btn">Buy Now</a>
+            <a href="#" className="project-btn"  onClick={handleBuyNow}>Buy Now</a>
           </div>
         </div>
         <div className="card">
@@ -30,7 +43,7 @@ export function Project() {
             <h3>JavaScript Project</h3>
             <p>Dynamic and interactive web project using JavaScript.</p>
             <div className="price"> ₹1000</div>
-            <a href="#" className="project-btn">Buy Now</a>
+            <a href="#" className="project-btn" onClick={handleBuyNow}>Buy Now</a>
           </div>
         </div>
 
@@ -41,7 +54,7 @@ export function Project() {
             <h3>React Project</h3>
             <p>Complete React project with routing, APIs & state management.</p>
             <div className="price"> ₹2,000</div>
-            <a href="#" className="project-btn">Buy Now</a>
+            <a href="#" className="project-btn" onClick={handleBuyNow}>Buy Now</a>
           </div>
         </div>
 
@@ -52,7 +65,7 @@ export function Project() {
             <h3>VB Project</h3>
             <p>Visual Basic project with database connectivity & reports.</p>
             <div className="price"> ₹800</div>
-            <a href="#" className="project-btn">Buy Now</a>
+            <a href="#" className="project-btn" onClick={handleBuyNow}>Buy Now</a>
           </div>
         </div>
 

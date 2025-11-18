@@ -13,6 +13,7 @@ import { Why } from "./components/Why";
 import { Itsolution } from "./components/Itsolution";
 import { Signup } from "./components/Signup";
 import { Registrationpanel } from "./Admin/Registrationpanel";
+import { Payment } from "./components/Payment";
 
 function AppWrapper() {
   const location = useLocation();
@@ -44,6 +45,7 @@ function AppWrapper() {
         <Route path="/mentorship" element={<Mentorship />} />
         <Route path="/itsolution" element={<Itsolution />} />
         <Route path="/admin/*" element={<Registrationpanel />} />
+        <Route path="/payment" element={<Payment/>} />
       </Routes>
 
       {!shouldHideLayout && <Footer />}
