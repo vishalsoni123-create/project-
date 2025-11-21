@@ -1,0 +1,67 @@
+.dashboard {
+  background-color: #f4f6f9;
+  min-height: 100vh;
+  padding: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  font-size: 16px;
+  color: #777;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card i {
+  font-size: 32px;
+  opacity: 0.8;
+}
+
+.user-card i {
+  color: #3b82f6;
+}
+
+.student-card i {
+  color: #22c55e;
+}
+
+.contact-card i {
+  color: #a855f7;
+}
+
+.settings-card i {
+  color: #f59e0b;
+}

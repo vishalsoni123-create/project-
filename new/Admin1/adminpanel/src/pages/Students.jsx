@@ -1,6 +1,4 @@
-import "./admin.css";
 import { useState, useEffect } from "react";
-
 export function Students() {
   const [students, setStudents] = useState([]);
   const [btn, setBtn] = useState(true);

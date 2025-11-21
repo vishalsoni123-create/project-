@@ -14,10 +14,10 @@ export function Project() {
     if (!student) {
       // User not logged in → go to login page
       alert("Please login before buying a project!");
-      navigate("/payment"); // assuming "/" is your Login page
+      navigate("/frontlogin"); // assuming "/" is your Login page
     } else {
       // User is logged in → open payment or project details
-      navigate("/login"); // or wherever you want to go
+      navigate("/frontlogin"); // or wherever you want to go
     }
   };
   return (

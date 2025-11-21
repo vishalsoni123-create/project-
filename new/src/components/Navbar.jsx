@@ -20,8 +20,8 @@ export function Navbar()
          </ul>
          </div>
         <div className="nav-btn-con">
-         <Link to="/login" className="nav-btn">Login</Link>
-         <Link to="/signup" className="nav-btn">SignUp</Link>
+         <Link to="/frontlogin" className="nav-btn">Login</Link>
+         <Link to="/signup" className="nav-btn">Register</Link>
         </div>
          <div onClick={()=>handle()} className="responsive-btn">
            <div className="line"></div>

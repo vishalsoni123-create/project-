@@ -14,9 +14,21 @@ export function Signup() {
   const [clg, setClg] = useState("");
   const [branch, setBranch] = useState("");
   const [course, setCourse] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  // ✅ Simple Password Validation (at least 6 characters)
+  const passwordRegex = /^.{6,}$/;
 
   function submit(e) {
     e.preventDefault();
+
+    // 🔍 Validate Password
+    if (!passwordRegex.test(password)) {
+      setPasswordError("Password must be at least 6 characters long.");
+      return;
+    }
+
+    setPasswordError(""); // clear error if valid
 
     const studentData = {
       name,
@@ -44,7 +56,8 @@ export function Signup() {
       .then((data) => {
         alert(data.message);
         console.log(data);
-        
+
+        // reset form fields
         setName("");
         setMobile("");
         setEmail("");
@@ -65,6 +78,7 @@ export function Signup() {
     <div className="registration-container">
       <form className="registration-form" onSubmit={submit}>
         <h2>Student Registration</h2>
+
         <div className="form-row">
           <div className="form-group">
             <label>Student Name</label>
@@ -76,6 +90,7 @@ export function Signup() {
               onChange={(e) => setName(e.target.value)}
             />
           </div>
+
           <div className="form-group">
             <label>Mobile</label>
             <input
@@ -85,7 +100,6 @@ export function Signup() {
               value={mobile}
               onChange={(e) => setMobile(e.target.value)}
             />
-
           </div>
         </div>
 
@@ -100,6 +114,7 @@ export function Signup() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
+
           <div className="form-group">
             <label>Password</label>
             <input
@@ -107,24 +122,47 @@ export function Signup() {
               placeholder="Enter your password"
               required
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                if (e.target.value.length < 6) {
+                  setPasswordError("Password must be at least 6 characters long.");
+                } else {
+                  setPasswordError("");
+                }
+              }}
             />
+            {/* ⚠️ Show password validation error */}
+            {passwordError && (
+              <p className="error-message" style={{ color: "red", fontSize: "0.9em" }}>
+                {passwordError}
+              </p>
+            )}
           </div>
         </div>
 
+        {/* ✅ City, State, District required */}
         <div className="form-row">
           <div className="form-group">
             <label>City</label>
-            <select value={city} onChange={(e) => setCity(e.target.value)}>
+            <select
+              required
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+            >
               <option value="">Select City</option>
               <option>Indore</option>
               <option>Bhopal</option>
               <option>Mumbai</option>
             </select>
           </div>
+
           <div className="form-group">
             <label>State</label>
-            <select value={state} onChange={(e) => setState(e.target.value)}>
+            <select
+              required
+              value={state}
+              onChange={(e) => setState(e.target.value)}
+            >
               <option value="">Select State</option>
               <option>Madhya Pradesh</option>
               <option>Maharashtra</option>
@@ -136,18 +174,24 @@ export function Signup() {
         <div className="form-row">
           <div className="form-group">
             <label>District</label>
-            <select value={disct} onChange={(e) => setDisct(e.target.value)}>
+            <select
+              required
+              value={disct}
+              onChange={(e) => setDisct(e.target.value)}
+            >
               <option value="">Select District</option>
               <option>Indore</option>
               <option>Bhopal</option>
               <option>Ujjain</option>
             </select>
           </div>
+
           <div className="form-group">
             <label>Address</label>
             <input
               type="text"
               placeholder="Enter your address"
+              required
               value={address}
               onChange={(e) => setAddress(e.target.value)}
             />
@@ -160,15 +204,18 @@ export function Signup() {
             <input
               type="text"
               placeholder="Enter referral name"
+              required
               value={ref}
               onChange={(e) => setRef(e.target.value)}
             />
           </div>
+
           <div className="form-group">
             <label>College Name</label>
             <input
               type="text"
               placeholder="Enter your college name"
+              required
               value={clg}
               onChange={(e) => setClg(e.target.value)}
             />
@@ -181,15 +228,18 @@ export function Signup() {
             <input
               type="text"
               placeholder="Enter your branch"
+              required
               value={branch}
               onChange={(e) => setBranch(e.target.value)}
             />
           </div>
+
           <div className="form-group">
             <label>Enrolled Course</label>
             <input
               type="text"
               placeholder="Enter your course"
+              required
               value={course}
               onChange={(e) => setCourse(e.target.value)}
             />
